@@ -6,6 +6,7 @@ pipeline{
       agent any
        environment {
              Docker_tag = getDockerTag()
+             PATH = "/var/lib/docker/volumes/maven_home/_data"
        }
        stages{
                stage('Quality Gate Status check'){
