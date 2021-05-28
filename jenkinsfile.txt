@@ -34,7 +34,10 @@ pipeline{
                 steps{
                   script{
                        docker build . -t ambith\Demo:Docker_tag
-                       withCredentials([string(credentialId: 'docker_password',variable: 'docker_password')]) {
+                       withCredentials([string(credentialsId: 'docker_password', variable: 'docker_password')]) {
+    // some block
+}
+                       {
                          docker login -u ambit -p $docker_password
                              docker"push ambiht\Demo:Docker_tag
                         }
